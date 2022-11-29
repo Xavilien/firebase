@@ -166,3 +166,15 @@ exports.getUserDetail = (request, response) => {
             return response.status(500).json({error: error.code})
         })
 }
+
+exports.updateUserDetails = (request, response) => {
+    let document = db.doc(`/users/${request.user.username}`);
+    document.update(request.body)
+        .then(() => {
+            response.json({ message: "Updated successfully" });
+        })
+        .catch((error) => {
+            console.error(error);
+            return response.status(500).json({ message: "Cannot update the value" });
+        });
+}
