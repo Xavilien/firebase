@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 
 import {Box} from "@mui/material";
 import Avatar from '@mui/material/Avatar';
@@ -13,7 +14,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import CircularProgress from '@mui/material/CircularProgress';
 
-import axios from 'axios';
 
 export default function Login() {
     const [email, setEmail] = useState('');
