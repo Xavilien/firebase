@@ -15,7 +15,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import axios from 'axios';
 
-const Login = () => {
+export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState([]);
@@ -133,5 +133,3 @@ const Login = () => {
         </Container>
     );
 }
-
-export default Login;

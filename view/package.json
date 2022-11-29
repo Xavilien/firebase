@@ -41,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://us-central1-todoapp-bf921.cloudfunctions.net/api"
+  "proxy": "http://localhost:5000/todoapp-bf921/us-central1/api"
 }
