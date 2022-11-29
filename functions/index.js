@@ -4,16 +4,18 @@ const auth = require("./util/auth");
 
 const {
     getAllTodos,
+    getOneTodo,
     postOneTodo,
     deleteTodo,
     editTodo
 } = require("./API/todos");
 
 // Todos
-app.get("/todos", getAllTodos);
-app.post("/todo", postOneTodo);
-app.delete('/todo/:todoId', deleteTodo);
-app.put("/todo/:todoId", editTodo);
+app.get("/todos", auth, getAllTodos);
+app.get("/todos/:todoId", auth, getOneTodo)
+app.post("/todo", auth, postOneTodo);
+app.delete('/todo/:todoId', auth, deleteTodo);
+app.put("/todo/:todoId", auth, editTodo);
 
 const {
     loginUser,
