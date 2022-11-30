@@ -23,9 +23,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -46,8 +44,5 @@
     ]
   },
   "proxy": "https://us-central1-todoapp-bf921.cloudfunctions.net/api",
-  "proxy-2": "http://localhost:5000/todoapp-bf921/us-central1/api",
-  "devDependencies": {
-    "gh-pages": "^4.0.0"
-  }
+  "proxy-2": "http://localhost:5000/todoapp-bf921/us-central1/api"
 }
