@@ -100,7 +100,7 @@ export default function Login() {
                             variant="contained"
                             color="primary"
                             sx={{
-                                margin: [3, 0, 2]
+                                marginTop: 2
                             }}
                             onClick={handleSubmit}
                             disabled={loading || !email || !password}

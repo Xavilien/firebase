@@ -99,9 +99,15 @@ exports.editTodo = (request, response) => {
     if (request.body.todoId || request.body.createdAt) {
         response.status(403).json({ message: "Not allowed to edit"} );
     }
-    // const document = db.doc(`/todos/${request.params.todoId}`);
 
-    let document = db.doc(`/todos/${request.params.todoId}`);
+    if (request.body.body.trim() === "") {
+        return response.status(400).json({ body: "Must not be empty" });
+    }
+    if (request.body.title.trim() === "") {
+        return response.status(400).json({ title: "Must not be empty" });
+    }
+
+    const document = db.doc(`/todos/${request.params.todoId}`);
 
     document
         .get()

@@ -17,12 +17,6 @@ const styles = {
         flexGrow: 1,
         padding: 3
     },
-    toolbar: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'flex-end',
-        padding: '0 8px',
-    },
     root: {},
     details: {
         display: 'flex'
@@ -58,7 +52,7 @@ const styles = {
     customError: {
         color: 'red',
         fontSize: '0.8rem',
-        marginTop: 10
+        marginTop: 1
     },
     submitButton: {
         marginTop: '10px'
@@ -102,7 +96,7 @@ export default function Account(props) {
                 }
                 console.log(error);
             })
-    });
+    }, []);
 
     const profilePictureHandler = (event) => {
         event.preventDefault();
@@ -152,6 +146,7 @@ export default function Account(props) {
                 console.log(error);
                 setButtonLoading(false);
             });
+        window.location.reload();
     };
 
     if (uiLoading === true) return (
