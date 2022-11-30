@@ -19,10 +19,10 @@ const theme = createTheme({
 function App() {
     return (
         <ThemeProvider theme={theme}>
-            <Router>
+            <Router basemname={`/${process.env.PUBLIC_URL}`}>
                 <div>
                     <Routes>
-                        <Route exact path={"/"} element={<Home />}/>
+                        <Route exact path={""} element={<Home />}/>
                         <Route exact path={"/login"} element={<Login />}/>
                         <Route exact path={"/signup"} element={<Signup />}/>
                     </Routes>
