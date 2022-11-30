@@ -91,10 +91,10 @@ export default function Home() {
                 setProfilePicture(response.data.userCredentials.imageUrl)
             })
             .catch((error) => {
+                console.log(error);
                 if (error.response.status === 403) {
                     navigate("/login");
                 }
-                console.log(error);
             })
     });
 
