@@ -14,5 +14,7 @@ Some of the challenges I had to deal with include the following:
 4. Cross-origin resource sharing: I had a lot of trouble trying to get the React frontend to make calls to the firebase backend API because of CORS. Was only fixed when I added `app.use(cors())` at the top of my `index.js` file for firebase. 
 5. Deploying to Github pages was a lot trickier than I expected because of routing issues that caused the webpage not to show up. Had to use HashRouter instead of BrowserRouter.
 6. Additionally, for some reason, `POST` requests were getting 405 errors. It turns out that Github pages does not allow `POST` requests...
+7. Tried deploying to firebase hosting but webpage does not seem to be working for some reason. API calls were not getting the correct response and it appears that it is because the calls are not going through the proxy. Turns out the `proxy` field in `package.json` is only for development. Seems like the only way for now is to hard code the links in axios requests.
 
 ### Areas for Improvement
+1. Some CSS elements are still a bit funky like the view dialogue and the centralisation of the loading icon.

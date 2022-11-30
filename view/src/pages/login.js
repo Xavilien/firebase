@@ -31,8 +31,10 @@ export default function Login() {
         };
 
         axios
-            .post("/login", userData)
+            .post("https://us-central1-todoapp-bf921.cloudfunctions.net/api/login", userData)
             .then((response) => {
+                console.log("Got here")
+                console.log(response.data)
                 localStorage.setItem("AuthToken", `Bearer ${response.data.token}`);
                 setLoading(false);
                 navigate("/");

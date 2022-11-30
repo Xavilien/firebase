@@ -80,7 +80,7 @@ export default function Account(props) {
         const authToken = localStorage.getItem("AuthToken");
         axios.defaults.headers.common["Authorization"] = `${authToken}`;
         axios
-            .get("/user")
+            .get("https://us-central1-todoapp-bf921.cloudfunctions.net/api/user")
             .then((response) => {
                 setFirstName(response.data.userCredentials.firstName);
                 setLastName(response.data.userCredentials.lastName);
@@ -109,7 +109,7 @@ export default function Account(props) {
         axios.defaults.headers.common["Authorization"] = `${authToken}`;
         axios.defaults.headers.post["Content-Type"] = 'multipart/form-data'
         axios
-            .post('/user/image', form_data)
+            .post('https://us-central1-todoapp-bf921.cloudfunctions.net/api/user/image', form_data)
             .then(() => {
                 window.location.reload();
             })
@@ -135,9 +135,10 @@ export default function Account(props) {
             country: country
         };
         axios
-            .post('/user', formRequest)
+            .post('https://us-central1-todoapp-bf921.cloudfunctions.net/api/user', formRequest)
             .then(() => {
                 setButtonLoading(false);
+                window.location.reload();
             })
             .catch((error) => {
                 if (error.response.status === 403) {
@@ -146,7 +147,6 @@ export default function Account(props) {
                 console.log(error);
                 setButtonLoading(false);
             });
-        window.location.reload();
     };
 
     if (uiLoading === true) return (

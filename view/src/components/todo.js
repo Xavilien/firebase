@@ -112,7 +112,7 @@ export default function Todo() {
         const authToken = localStorage.getItem("AuthToken");
         axios.defaults.headers.common["Authorization"] = `${authToken}`;
         axios
-            .get("/todos")
+            .get("https://us-central1-todoapp-bf921.cloudfunctions.net/api/todos")
             .then((response) => {
                 setTodos(response.data);
                 setUiLoading(false);
@@ -131,7 +131,7 @@ export default function Todo() {
         axios.defaults.headers.common["Authorization"] = `${authToken}`;
         let todoId = data.todo.todoId;
         axios
-            .delete(`/todo/${todoId}`)
+            .delete(`https://us-central1-todoapp-bf921.cloudfunctions.net/api/todo/${todoId}`)
             .then(() => {
                 window.location.reload();
             })
@@ -175,13 +175,13 @@ export default function Todo() {
 
         if (buttonType === "Edit") {
             options = {
-                url: `/todo/${todoId}`,
+                url: `https://us-central1-todoapp-bf921.cloudfunctions.net/api/todo/${todoId}`,
                 method: "put",
                 data: userTodo
             };
         } else {
             options = {
-                url: "/todo",
+                url: "https://us-central1-todoapp-bf921.cloudfunctions.net/api/todo",
                 method: "post",
                 data:userTodo
             };

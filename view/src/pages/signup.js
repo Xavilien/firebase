@@ -43,7 +43,7 @@ export default function Signup() {
         };
 
         axios
-            .post("/signup", newUserData)
+            .post("https://us-central1-todoapp-bf921.cloudfunctions.net/api/signup", newUserData)
             .then((response) => {
                 localStorage.setItem("AuthToken", `${response.data.token}`);
                 setLoading(false);
