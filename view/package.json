@@ -2,7 +2,7 @@
   "name": "view",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://xavilien.github.io/todoapp/",
+  "homepage": "https://xavilien.github.io/todoapp",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
