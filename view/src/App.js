@@ -22,9 +22,9 @@ function App() {
             <Router>
                 <div>
                     <Routes>
-                        <Route exact path={"/"} element={<Home />}/>
-                        <Route exact path={"/login"} element={<Login />}/>
-                        <Route exact path={"/signup"} element={<Signup />}/>
+                        <Route exact path={"todoapp/"} element={<Home />}/>
+                        <Route exact path={"todoapp/login"} element={<Login />}/>
+                        <Route exact path={"todoapp/signup"} element={<Signup />}/>
                     </Routes>
                 </div>
             </Router>

@@ -6,8 +6,8 @@
       "ignore": [
         "node_modules",
         ".git",
-        "todoapp-debug.log",
-        "todoapp-debug.*.log"
+        "firebase-debug.log",
+        "firebase-debug.*.log"
       ]
     }
   ]
